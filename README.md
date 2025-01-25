@@ -1,15 +1,12 @@
 # WignerD
 
 Provides routines to return the Wigner D-matrix
-
 $$
 \begin{equation}
 D^j_{m'm}(\alpha,\beta,\gamma) = e^{-im'\alpha} d^j_{m'm}(\beta) e^{-im\gamma}
 \end{equation}
 $$
-
 and the d-matrix
-
 $$
 \begin{equation}
 \begin{aligned}
@@ -28,7 +25,6 @@ $$
 \end{aligned}
 \end{equation}
 $$
-
 for a given value of the angular momentum j.
 By default, these are calculated via matrix diagonalization using the method of Feng <i>et al.</i>[[1]](1), but the use of the analytic expression for the d-matrix can be forced as well.
 
