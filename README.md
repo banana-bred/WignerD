@@ -77,8 +77,8 @@ The module `wignerd` contains the following public interfaces, which can be acce
 | interface               | description |
 | ----------------------- | ----------- |
 | `wigner_d(...)`         | This is an interface wrapper for `wigner_little_d` and `wigner_big_d`, depending on the number of arguments that you provide.|
-| `wigner_little_d(...)`  | Returns $d^j_{m'm}(\beta)$ via the analytic expression or matrix diagonalization. See [docs](https://banana-bred.github.io/WignerD/) for details.|
-| `wigner_big_D(...)`     | Returns $D^j_{m'm}(\alpha,\beta,\gamma)$ via the analytic expression or matrix diagonalization. See [docs](https://banana-bred.github.io/WignerD/) for details.|
+| `wigner_little_d(...)`  | Returns the d-matrix via the analytic expression or matrix diagonalization. See [docs](https://banana-bred.github.io/WignerD/) for details.|
+| `wigner_big_D(...)`     | Returns the D-matrix via the analytic expression or matrix diagonalization. See [docs](https://banana-bred.github.io/WignerD/) for details.|
 
 More info on input/output types throughout the [docs](https://banana-bred.github.io/WignerD/).
 
