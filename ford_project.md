@@ -1,15 +1,20 @@
-# WignerD
+---
+project: WignerD
+summary: Provides routines to return the Wigner matrices D(αβγ) and d(β).
+         Public interfaces for accessing these routines are made available in the `wignerd` module.
+extensions: f
+fixed_extensions:
+max_frontpage_items: 6
+display: public
+---
 
-Provides routines to return the Wigner matrices $D^j(\alpha, \beta, \gamma)$
-
+Provides procedures to calculate the Wigner matrices
 $$
 \begin{equation}
 D^j_{m'm}(\alpha,\beta,\gamma) = e^{-im'\alpha} d^j_{m'm}(\beta) e^{-im\gamma}
 \end{equation}
 $$
-
-and $d^j(\beta)$
-
+and
 $$
 \begin{equation}
 \begin{aligned}
@@ -28,9 +33,23 @@ $$
 \end{aligned}
 \end{equation}
 $$
+in their real forms.
+The \(d\) matrix can be obtained via its analytic expression (2) or via matrix diagonalization<sup>[[1]](#1)</sup>.
+**The matrix diagonalization method is used by default**, but the analytic method can be forced with an optional parameter in all interfaces.
+The factorial terms in (2) can easily overflow double precision for approximately the following values of j:
 
-for a given value of the angular momentum $j$.
-By default, these are calculated via matrix diagonalization using the method of Feng <i>et al.</i>[[1]](1), but the use of the analytic expression for $d^j(\beta)$ can be forced as well.
+<center>
+
+| # bits | critical \(j\) |
+| ------ | ------------ |
+| 32  | 17  |
+| 64  | 86  |
+| 128 | 878 |
+
+</center>
+
+This problem is avoided when using the matrix diagonalization method of Feng <i>et al.</i><sup>[[1]](#1)</sup>.
+For larger \(j\), the matrix diagonalization method quickly becomes faster than the analytic version.
 
 ### Dependencies
 - LAPACK's `ZHBEV` routine, which is made available in the [Fortran standard library](https://stdlib.fortran-lang.org/).
@@ -82,8 +101,44 @@ The module `wignerd` contains the following public interfaces, which can be acce
 
 More info on input/output types throughout the [docs](https://banana-bred.github.io/WignerD/).
 
+### Example
+Calculate \(D^{1/2}(\alpha,\beta,\gamma)\) and \(d^{1/2}(\beta)\):
 
-[[1]](1)
+    program D
+
+        use, intrinsic :: iso_fortran_env, only: wp => real64
+        use wignerd,                       only: wigner_d, wigner_big_D, wigner_little_d
+        use wignerd__constants,            only: one, two, pi
+
+        real(wp), allocatable :: little_d1(:,:)
+        real(wp), allocatable :: little_d2(:,:)
+        real(wp), allocatable :: big_D1(:,:)
+        real(wp), allocatable :: big_D2(:,:)
+        real(wp) :: j, euler_alpha, euler_beta, euler_gamma
+
+        j = one / two
+
+        euler_alpha = pi / 6
+        euler_beta  = pi / 2
+        euler_gamma = pi
+
+        little_d1 = wigner_d(j, euler_beta)                            ! -- calculate d^j(β)
+        little_d2 = wigner_little_d(j, euler_beta)                     ! -- calculate d^j(β)
+        big_D1 = wigner_d(j, euler_alpha, euler_beta, euler_gamma)     ! -- calculate D^j(α,β,γ)
+        big_D2 = wigner_big_D(j, euler_alpha, euler_beta, euler_gamma) ! -- calculate D^j(α,β,γ)
+
+    end program D
+
+In the above, arrays `big_D1` and `big_D2` will hold the same information because they end up calling the same routines (the same goes for `little_d1` and `little_d2`).
+The above calls default to the diagonalization method to obtain \(D^{1/2}(\alpha,\beta,\gamma)\) and \(d^{1/2}(\beta)\).
+We can force the use of the analytic expression via the optional input parameter `use_analytic`:
+
+    little_d1 = wigner_little_d(j, euler_beta) ! <--------------------------------- matrix diagonalization
+    little_d2 = wigner_little_d(j, euler_beta, use_analytic = .true.) ! <---------- analytic
+    big_D1    = wigner_big_D(j, euler_alpha, euler_beta, euler_beta) ! <----------- matrix diagonalization
+    big_D2    = wigner_big_D(j,  euler_alpha, euler_beta, euler_beta, .true.) ! <-- analytic
+
+#### Happy rotating !
 
 ---
 
