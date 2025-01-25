@@ -1,6 +1,6 @@
 # WignerD
 
-Provides routines to return the Wigner matrices $D^j(\alpha, \beta, \gamma)$
+Provides routines to return the Wigner D-matrix
 
 $$
 \begin{equation}
@@ -8,7 +8,7 @@ D^j_{m'm}(\alpha,\beta,\gamma) = e^{-im'\alpha} d^j_{m'm}(\beta) e^{-im\gamma}
 \end{equation}
 $$
 
-and $d^j(\beta)$
+and the d-matrix
 
 $$
 \begin{equation}
@@ -29,8 +29,8 @@ $$
 \end{equation}
 $$
 
-for a given value of the angular momentum $j$.
-By default, these are calculated via matrix diagonalization using the method of Feng <i>et al.</i>[[1]](1), but the use of the analytic expression for $d^j(\beta)$ can be forced as well.
+for a given value of the angular momentum j.
+By default, these are calculated via matrix diagonalization using the method of Feng <i>et al.</i>[[1]](1), but the use of the analytic expression for the d-matrix can be forced as well.
 
 ### Dependencies
 - LAPACK's `ZHBEV` routine, which is made available in the [Fortran standard library](https://stdlib.fortran-lang.org/).
@@ -56,7 +56,7 @@ The archive file `libwignerd.a` and several `.mod` files will be placed in the g
 These will be needed for reference by another program.
 
 ### Testing
-A few tests are included for explicit values of the \(d^j_{m'm}(\beta)\) for several values of the angle \(\beta\).
+A few tests are included for explicit values of the d-matrix for several values of the angle β.
 Just run
 
     $ fpm test
@@ -77,8 +77,8 @@ The module `wignerd` contains the following public interfaces, which can be acce
 | interface               | description |
 | ----------------------- | ----------- |
 | `wigner_d(...)`         | This is an interface wrapper for `wigner_little_d` and `wigner_big_d`, depending on the number of arguments that you provide.|
-| `wigner_little_d(...)`  | Returns \(d^j_{m'm}(\beta)\) via the analytic expression or matrix diagonalization. See [docs](https://banana-bred.github.io/WignerD/) for details.|
-| `wigner_big_D(...)`     | Returns \(D^j_{m'm}(\alpha,\beta,\gamma)\) via the analytic expression or matrix diagonalization. See [docs](https://banana-bred.github.io/WignerD/) for details.|
+| `wigner_little_d(...)`  | Returns $d^j_{m'm}(\beta)$ via the analytic expression or matrix diagonalization. See [docs](https://banana-bred.github.io/WignerD/) for details.|
+| `wigner_big_D(...)`     | Returns $D^j_{m'm}(\alpha,\beta,\gamma)$ via the analytic expression or matrix diagonalization. See [docs](https://banana-bred.github.io/WignerD/) for details.|
 
 More info on input/output types throughout the [docs](https://banana-bred.github.io/WignerD/).
 
