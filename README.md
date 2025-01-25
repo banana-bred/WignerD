@@ -7,6 +7,7 @@ fixed_extensions:
 max_frontpage_items: 6
 display: public
 ---
+
 Provides procedures to calculate the Wigner matrices
 $$
 \begin{equation}
