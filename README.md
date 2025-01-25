@@ -80,10 +80,9 @@ The module `wignerd` contains the following public interfaces, which can be acce
 | `wigner_little_d(...)`  | Returns the d-matrix via the analytic expression or matrix diagonalization. See [docs](https://banana-bred.github.io/WignerD/) for details.|
 | `wigner_big_D(...)`     | Returns the D-matrix via the analytic expression or matrix diagonalization. See [docs](https://banana-bred.github.io/WignerD/) for details.|
 
-More info on input/output types throughout the [docs](https://banana-bred.github.io/WignerD/).
+More info on input/output types and examples are given in the [docs](https://banana-bred.github.io/WignerD/).
 
-
-[[1]](1)
+#### Happy rotating !
 
 ---
 
