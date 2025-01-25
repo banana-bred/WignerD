@@ -6,6 +6,7 @@ extensions: f
 fixed_extensions:
 max_frontpage_items: 6
 display: public
+license: mit
 ---
 
 Provides procedures to calculate the Wigner matrices
