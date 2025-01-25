@@ -1,0 +1,156 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Provides routines to return the Wigner matrices D(αβγ) and d(β). Public interfaces for accessing these routines are made available in the wignerd module.">
+    <meta name="author" content="" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>All Modules &ndash; WignerD
+</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">WignerD </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12" id='text'>
+			 <h1>Modules</h1>
+			 <table class="table">
+			 <thead><tr><th>Module</th><th>Source File</th><th>Description</th></tr></thead>
+			 <tbody>
+			   <tr class="active">
+                 <td><a href='../module/wignerd.html'>wignerd</a></td>
+                 <td><a href='../sourcefile/wignerd.f.html'>wignerd.f</a></td>
+                 <td><p>Module for computing the Wigner D-matrix and d-matrix (big D and little d; Fortran is case insensitive).
+The d-matrix can be calculated via the analytic expression, but this can overflow for large j due to
+the ratios of large factoials. The d-matrix can instead be calculated via sparse banded matrix
+diagonalization. See DOI: 10.1103PhysRevE.92.043307 for more details.</p></td>
+               </tr>
+<!--active-->			   <tr class="">
+                 <td><a href='../module/wignerd__characters.html'>wignerd__characters</a></td>
+                 <td><a href='../sourcefile/wignerd__characters.f.html'>wignerd__characters.f</a></td>
+                 <td><p>Contains procedures related to characters and character arrays,
+such as converting integers to characters</p></td>
+               </tr>
+<!---->			   <tr class="active">
+                 <td><a href='../module/wignerd__constants.html'>wignerd__constants</a></td>
+                 <td><a href='../sourcefile/wignerd__constants.f.html'>wignerd__constants.f</a></td>
+                 <td><p>Contains defined constants</p></td>
+               </tr>
+<!--active-->			   <tr class="">
+                 <td><a href='../module/wignerd__functions.html'>wignerd__functions</a></td>
+                 <td><a href='../sourcefile/wignerd__functions.f.html'>wignerd__functions.f</a></td>
+                 <td><p>Contains various functions used in the code</p></td>
+               </tr>
+<!---->			   <tr class="active">
+                 <td><a href='../module/wignerd__lapack_interface.html'>wignerd__lapack_interface</a></td>
+                 <td><a href='../sourcefile/wignerd__lapack_interface.f.html'>wignerd__lapack_interface.f</a></td>
+                 <td><p>Select at build time which lapack implementation to use</p></td>
+               </tr>
+<!--active-->			   <tr class="">
+                 <td><a href='../module/wignerd__system.html'>wignerd__system</a></td>
+                 <td><a href='../sourcefile/wignerd__system.f.html'>wignerd__system.f</a></td>
+                 <td><p>Contains the definitions of stderr and procedures to stop the execution of the program while
+printing error messages.</p></td>
+               </tr>
+<!---->			   <tr class="active">
+                 <td><a href='../module/wignerd__types.html'>wignerd__types</a></td>
+                 <td><a href='../sourcefile/wignerd__types.f.html'>wignerd__types.f</a></td>
+                 <td><p>Module containing defining the precision for real and complex types</p></td>
+               </tr>
+<!--active-->			 </tbody></table>
+             
+        </div>
+      </div>
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              WignerD
+              &copy; 2025 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+
+    <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

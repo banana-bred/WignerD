@@ -1,0 +1,34 @@
+#!/bin/sh
+
+FC="gfortran"
+
+main() {
+
+  rm -f build/mod/*
+  rm -f build/obj/*
+
+  mkdir -p build/mod
+  mkdir -p build/obj
+  mkdir -p build/lib
+
+  suf="f"
+
+  for item in \
+    wignerd__types."${suf}" \
+    wignerd__system."${suf}" \
+    wignerd__constants."${suf}" \
+    wignerd__characters."${suf}" \
+    wignerd__functions."${suf}" \
+    wignerd__lapack_interface."${suf}" \
+    wignerd."${suf}" ; do
+
+    $FC -O3 -J build/mod -ffree-form -cpp -DUSE_EXTERNAL_LAPACK -l lapack -c src/"${item}" -o build/obj/"${item%.*}".o -lstdlib
+
+  done
+
+  # -- pack the object and mod files into an archive so that it can be used by another program
+  ar r build/lib/libWignerD.a build/obj/*.o build/mod/*.mod
+
+}
+
+main "$@"
