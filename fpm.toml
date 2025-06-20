@@ -1,8 +1,8 @@
 name = "wignerd"
-version = "1.0.0"
-license = "MIT"
+version = "1.0.1"
+license = "GPL2"
 author = "Josh Forer"
-maintainer = "jbf2177@columbia.edu"
+maintainer = "j.forer@posteo.net"
 copyright = "2025 Josh Forer"
 description = "Provides routines to return the Wigner matrices D(α,β,γ) and d(β)"
 keywords = [ "Wigner", "D", "matrix", "matrices" ]
