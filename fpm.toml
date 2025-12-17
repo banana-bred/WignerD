@@ -1,5 +1,5 @@
 name = "wignerd"
-version = "1.0.2"
+version = "1.0.3"
 license = "MIT"
 author = "Josh Forer"
 maintainer = "j.forer@posteo.net"
@@ -9,6 +9,9 @@ keywords = [ "Wigner", "D", "matrix", "matrices" ]
 
 [library]
 source-dir = "src"
+
+[build]
+link = ["lapack"]
 
 [dependencies]
 stdlib = "*"

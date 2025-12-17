@@ -108,7 +108,7 @@ contains
     ! -- allocate D
     D = wigner_little_d_jreal(j, euler_beta, use_analytic)
 
-    little_d = D
+    little_d = D%re
 
     do concurrent (i = 1 : n, k = 1 : n)
       mp = -j + i - 1
@@ -327,7 +327,6 @@ contains
       use wignerd__constants, only: im
 
       integer :: i, k
-      integer :: imu
       real(rp) :: cos_term(n), sin_term(n)
 
       allocate(little_d(n, n))
@@ -386,7 +385,6 @@ contains
       implicit none
 
       real(rp), intent(in) :: j, m
-      real(rp) :: arg
       real(rp) :: output
 
       output = sqrt( (j + m) * (j - m + 1) )
