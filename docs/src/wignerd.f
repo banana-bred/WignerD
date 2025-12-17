@@ -279,11 +279,11 @@ contains
     diag: block
 
       use wignerd__characters,             only: int2char
-#ifdef USE_EXTERNAL_LAPACK
+! #ifdef USE_EXTERNAL_LAPACK
       use wignerd__lapack_interface, only: zhbev
-#else
-      use stdlib_linalg_lapack, only: zhbev => stdlib_zhbev
-#endif
+! #else
+!       use stdlib_linalg_lapack, only: zhbev => stdlib_zhbev
+! #endif
 
       integer :: i, k
       integer :: kd

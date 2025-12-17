@@ -1,6 +1,6 @@
 name = "wignerd"
-version = "1.0.1"
-license = "GPL2"
+version = "1.0.2"
+license = "MIT"
 author = "Josh Forer"
 maintainer = "j.forer@posteo.net"
 copyright = "2025 Josh Forer"

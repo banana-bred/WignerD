@@ -71,7 +71,7 @@
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                 title="59.3% of total for source files.">220 statements</a>
+                 title="59.2% of total for source files.">219 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -429,11 +429,11 @@
 <a id="ln-279" name="ln-279" href="#ln-279"></a><span class="w">    </span><span class="n">diag</span><span class="p">:</span><span class="w"> </span><span class="k">block</span>
 <a id="ln-280" name="ln-280" href="#ln-280"></a>
 <a id="ln-281" name="ln-281" href="#ln-281"></a><span class="k">      use </span><span class="n">wignerd__characters</span><span class="p">,</span><span class="w">             </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">int2char</span>
-<a id="ln-282" name="ln-282" href="#ln-282"></a><span class="cp">#ifdef USE_EXTERNAL_LAPACK</span>
+<a id="ln-282" name="ln-282" href="#ln-282"></a><span class="c">! #ifdef USE_EXTERNAL_LAPACK</span>
 <a id="ln-283" name="ln-283" href="#ln-283"></a><span class="w">      </span><span class="k">use </span><span class="n">wignerd__lapack_interface</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">zhbev</span>
-<a id="ln-284" name="ln-284" href="#ln-284"></a><span class="cp">#else</span>
-<a id="ln-285" name="ln-285" href="#ln-285"></a><span class="w">      </span><span class="k">use </span><span class="n">stdlib_linalg_lapack</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">zhbev</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">stdlib_zhbev</span>
-<a id="ln-286" name="ln-286" href="#ln-286"></a><span class="cp">#endif</span>
+<a id="ln-284" name="ln-284" href="#ln-284"></a><span class="c">! #else</span>
+<a id="ln-285" name="ln-285" href="#ln-285"></a><span class="c">!       use stdlib_linalg_lapack, only: zhbev =&gt; stdlib_zhbev</span>
+<a id="ln-286" name="ln-286" href="#ln-286"></a><span class="c">! #endif</span>
 <a id="ln-287" name="ln-287" href="#ln-287"></a>
 <a id="ln-288" name="ln-288" href="#ln-288"></a><span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">k</span>
 <a id="ln-289" name="ln-289" href="#ln-289"></a><span class="w">      </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">kd</span>
